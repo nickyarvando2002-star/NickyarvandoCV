@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicky Arvando | Business & Marketing Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white;
+            color: #333333;
+        }
+        .accent-color {
+            color: #0A2342;
+        }
+        .accent-bg {
+            background-color: #0A2342;
+        }
+        .nav-link.active {
+            color: #0A2342;
+            font-weight: 700;
+        }
+        .timeline-item-content {
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .timeline-item-content.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="header" class="w-full fixed top-0 bg-white/80 backdrop-blur-sm z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold accent-color">Nicky Arvando</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-600 hover:accent-color transition-colors duration-300">About</a>
+                <a href="#experience" class="nav-link text-gray-600 hover:accent-color transition-colors duration-300">Experience</a>
+                <a href="#skills" class="nav-link text-gray-600 hover:accent-color transition-colors duration-300">Skills</a>
+                <a href="#education" class="nav-link text-gray-600 hover:accent-color transition-colors duration-300">Education</a>
+            </div>
+             <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/80 backdrop-blur-sm">
+             <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:accent-color">About</a>
+             <a href="#experience" class="block py-2 px-4 text-sm text-gray-600 hover:accent-color">Experience</a>
+             <a href="#skills" class="block py-2 px-4 text-sm text-gray-600 hover:accent-color">Skills</a>
+             <a href="#education" class="block py-2 px-4 text-sm text-gray-600 hover:accent-color">Education</a>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <section id="about" class="container mx-auto px-6 py-16">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl">
+                        <!-- Your image has been added here -->
+                        <img src="uploaded:IMG_4139 copy.jpg-c69e4ca3-3fc4-4827-8ec3-1be11e8aa30b" alt="Nicky Arvando" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Nicky Arvando</h1>
+                    <p class="text-xl md:text-2xl accent-color mb-6">Business, Marketing, and Operations Professional</p>
+                    <p class="text-base text-gray-700 leading-relaxed mb-6">
+                        A results-driven Business Management graduate from Universitas Prasetiya Mulya with hands-on experience in operations, human resources, and product development within the F&B and creative sectors. I have a proven ability to build efficient systems, foster team growth, and drive impactful outcomes. With a strong interest in marketing, social media campaigns, and branding, I am a strategic thinker open to new opportunities and relocation.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="mailto:nickyarvando2002@gmail.com" class="accent-bg text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity">Email Me</a>
+                        <a href="https://linkedin.com/in/nicky-arvando-609433219" target="_blank" class="border-2 border-gray-800 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-800 hover:text-white transition-colors">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="bg-white py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Professional Experience</h2>
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="absolute left-1/2 w-0.5 h-full bg-gray-300 transform -translate-x-1/2"></div>
+
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2"></div>
+                            <div class="relative z-10 w-8 h-8 accent-bg rounded-full shadow-md flex items-center justify-center">
+                                <div class="w-4 h-4 bg-white rounded-full"></div>
+                            </div>
+                            <div class="w-1/2 pl-8">
+                                <div class="p-4 bg-gray-100 rounded-lg shadow-md cursor-pointer timeline-header">
+                                    <p class="text-gray-500 text-sm">Jan 2024 - Present</p>
+                                    <h3 class="font-bold">Co-Founder</h3>
+                                    <p class="text-sm accent-color">Le Manoir Fragrance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 ml-auto pl-8">
+                            <div class="timeline-item-content mt-2 p-4 bg-white border border-gray-200 rounded-lg">
+                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
+                                    <li>Led initiatives in product development, from ideation to market launch.</li>
+                                    <li>Coordinated day-to-day operations and strategic business growth.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-8">
+                         <div class="flex items-center w-full">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="p-4 bg-gray-100 rounded-lg shadow-md cursor-pointer timeline-header">
+                                    <p class="text-gray-500 text-sm">Jul 2023 - Jul 2024</p>
+                                    <h3 class="font-bold">Head of Human Resources</h3>
+                                    <p class="text-sm accent-color">SASIMO</p>
+                                </div>
+                            </div>
+                            <div class="relative z-10 w-8 h-8 accent-bg rounded-full shadow-md flex items-center justify-center">
+                                <div class="w-4 h-4 bg-white rounded-full"></div>
+                            </div>
+                             <div class="w-1/2"></div>
+                        </div>
+                         <div class="w-1/2 mr-auto pr-8 text-right">
+                            <div class="timeline-item-content mt-2 p-4 bg-white border border-gray-200 rounded-lg text-left">
+                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
+                                    <li>Conducted comprehensive job analysis to enhance clarity and efficiency.</li>
+                                    <li>Collaborated closely with marketing, operations, and finance teams.</li>
+                                    <li>Developed job descriptions, led recruitment, and implemented performance analysis systems.</li>
+                                    <li>Contributed to content planning aligned with brand identity.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2"></div>
+                            <div class="relative z-10 w-8 h-8 accent-bg rounded-full shadow-md flex items-center justify-center">
+                                <div class="w-4 h-4 bg-white rounded-full"></div>
+                            </div>
+                            <div class="w-1/2 pl-8">
+                                <div class="p-4 bg-gray-100 rounded-lg shadow-md cursor-pointer timeline-header">
+                                    <p class="text-gray-500 text-sm">Jul 2022 - Jul 2023</p>
+                                    <h3 class="font-bold">Operations Specialist</h3>
+                                    <p class="text-sm accent-color">KOFIKA</p>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="w-1/2 ml-auto pl-8">
+                            <div class="timeline-item-content mt-2 p-4 bg-white border border-gray-200 rounded-lg">
+                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
+                                    <li>Managed supplier relationships for cost efficiency and quality.</li>
+                                    <li>Led product development from concept to launch, including market research.</li>
+                                    <li>Streamlined workflows for operational efficiency and business growth.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Core Skills</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-xl font-bold mb-4 accent-color">Management</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Operations Management</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Human Resources</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Business Strategy</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Cross-functional Collaboration</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Performance Analysis</span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-xl font-bold mb-4 accent-color">Marketing & Creative</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Marketing</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Social Media Campaigns</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Branding</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Content Strategy</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Product Development</span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:col-span-2 lg:col-span-1">
+                        <h3 class="text-xl font-bold mb-4 accent-color">Technical & Other</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Procurement & Supply Chain</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Finance</span>
+                             <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-full">Equestrian (Showjumping)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16">
+                     <h3 class="text-2xl font-bold text-center mb-8">Language Proficiency</h3>
+                     <div class="chart-container">
+                         <canvas id="languagesChart"></canvas>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="bg-white py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Education & Certifications</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-xl font-bold accent-color mb-2">Education</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="font-bold">Universitas Prasetiya Mulya</p>
+                            <p>Bachelor's Degree in Business Administration and Management</p>
+                            <p class="text-sm text-gray-500">Graduated: September 2020</p>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left">
+                         <h3 class="text-xl font-bold accent-color mb-2">Certifications</h3>
+                         <div class="bg-gray-50 p-4 rounded-lg space-y-3">
+                             <p>Certificate of Participation in APM Dressage and Show Jumping Clinic with Tunku Nazroff (MAS) Fei Level 2 Coach</p>
+                             <hr>
+                             <p>Certificate of Completion Jumping Clinic with Marc Boes</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Nicky Arvando. All rights reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Open to relocation for opportunities in marketing, social media, and branding.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            const timelineHeaders = document.querySelectorAll('.timeline-header');
+            timelineHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.closest('.timeline-item').querySelector('.timeline-item-content');
+                    content.classList.toggle('open');
+                });
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            const ctx = document.getElementById('languagesChart').getContext('2d');
+            const languagesChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Indonesian', 'English', 'Chinese', 'French', 'Spanish'],
+                    datasets: [{
+                        label: 'Proficiency',
+                        data: [100, 100, 50, 50, 25],
+                        backgroundColor: [
+                            '#0A2342',
+                            '#1E3A8A',
+                            '#3B82F6',
+                            '#60A5FA',
+                            '#93C5FD'
+                        ],
+                        borderColor: [
+                            '#0A2342',
+                            '#1E3A8A',
+                            '#3B82F6',
+                            '#60A5FA',
+                            '#93C5FD'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                             callbacks: {
+                                label: function(context) {
+                                    let value = context.raw;
+                                    let label = '';
+                                    if (value === 100) label = 'Native/Bilingual';
+                                    else if (value === 50) label = 'Limited Working';
+                                    else if (value === 25) label = 'Elementary';
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
